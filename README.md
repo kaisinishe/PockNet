@@ -81,7 +81,6 @@ To train the TabNet model, use the following command:
 ```bash
 python src/train.py experiment=tabnet_chen11_bu48
 ```
-
 ______________________________________________________________________
 
 ## XGBoost Model
@@ -108,7 +107,18 @@ To train the XGBoost model, use the following command:
 python src/train.py experiment=xgboost_binding_site
 ```
 
-______________________________________________________________________
+---
+
+
+### Results XGBoost and TabNet
+
+The results of the XGBoost and TabNet compared with the p2rank evaluated on the test set bu48 are shown below. The results are based on the MSE, R2 Score, and IoU metrics.
+
+| Model   | MSE   | R2    | IoU   |
+|---------|-------|-------|-------|
+| TabNet  | 0.096 | 0.341 | 0.24 |
+| XGBoost | 0.042 | 0.361 | 0.23 |
+| p2rank  | NaN | 0.324 | 0.21 |______________________________________________________________________
 
 ## Logging and Monitoring
 
