@@ -24,17 +24,17 @@ model:
     mode: min
     factor: 0.1
     patience: 10
-  n_d: 128  # Width of the decision prediction layer
-  n_a: 128  # Width of the attention embedding for each mask
-  n_steps: 8  # Number of steps in the architecture
-  gamma: 1.5  # Relaxation parameter
+  n_d: 128 # Width of the decision prediction layer
+  n_a: 128 # Width of the attention embedding for each mask
+  n_steps: 8 # Number of steps in the architecture
+  gamma: 1.5 # Relaxation parameter
 
 # Data configurations
 data:
   batch_size: 1024
-  train_val_test_split: [0.8, 0.2, null]  # 80/20 train/val split, no test split
-  sampling_strategy: "combined"  # Using combined sampling strategy
-  eval_dataset: "bu48"  # Use BU48 as evaluation dataset
+  train_val_test_split: [0.8, 0.2, null] # 80/20 train/val split, no test split
+  sampling_strategy: "combined" # Using combined sampling strategy
+  eval_dataset: "bu48" # Use BU48 as evaluation dataset
 
 # Trainer configurations
 trainer:

@@ -17,12 +17,12 @@ trainer:
 data:
   num_workers: 0
   pin_memory: false
-  sampling_strategy: "balanced"  # Use balanced sampling to ensure both classes are present
+  sampling_strategy: "balanced" # Use balanced sampling to ensure both classes are present
 
 # model settings for overfitting
 model:
   optimizer:
-    lr: 0.01  # Higher learning rate for faster memorization
+    lr: 0.01 # Higher learning rate for faster memorization
 
 # model ckpt and early stopping need to be disabled during overfitting
 callbacks: null

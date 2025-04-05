@@ -7,15 +7,16 @@
 [![license](https://img.shields.io/badge/License-MIT-green.svg?labelColor=gray)](https://github.com/YourGithubName/PockNet#license)
 
 ## Overview
+
 PockNet is a machine learning framework designed for binding site prediction using various models, including TabNet and XGBoost. The project leverages PyTorch Lightning for training and evaluation, and includes configurations for hyperparameter tuning and logging.
 
----
+______________________________________________________________________
 
 ## Preprocessing
 
 The preprocessing pipeline for this project is adapted from [p2rank](https://github.com/rdk/p2rank), a tool for protein-ligand binding site prediction. Special thanks to the p2rank team for their contributions to the preprocessing methodology.
 
----
+______________________________________________________________________
 
 ## Installation
 
@@ -24,6 +25,7 @@ To set up the project on your local machine, follow these steps:
 ### Prerequisites
 
 Ensure you have the following installed:
+
 - Python 3.8 or higher
 - pip (Python package manager)
 - [conda](https://docs.conda.io/en/latest/miniconda.html)
@@ -31,12 +33,14 @@ Ensure you have the following installed:
 ### Using Conda
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/YourGithubName/PockNet.git
    cd PockNet
    ```
 
 2. Create a conda environment and install dependencies:
+
    ```bash
    conda env create -f environment.yaml -n pocknet
    conda activate pocknet
@@ -48,11 +52,12 @@ Ensure you have the following installed:
 ### Verifying Installation
 
 To verify the installation, run the following command to check if the tests pass:
+
 ```bash
 pytest tests/
 ```
 
----
+______________________________________________________________________
 
 ## TabNet Model
 
@@ -63,19 +68,21 @@ The TabNet model is implemented in `src/models/tabnet_binding_site_module.py`. I
 - **Configurations**: Defined in `configs/model/tabnet_binding_site.yaml`.
 
 ### Key Hyperparameters
+
 - `n_d`: Width of the decision prediction layer.
 - `n_a`: Width of the attention embedding for each mask.
 - `n_steps`: Number of steps in the architecture.
 - `gamma`: Coefficient for feature reuse in masks.
 
 ### Training
+
 To train the TabNet model, use the following command:
 
 ```bash
 python src/train.py experiment=tabnet_chen11_bu48
 ```
 
----
+______________________________________________________________________
 
 ## XGBoost Model
 
@@ -86,6 +93,7 @@ The XGBoost model is implemented in `src/models/xgboost_binding_site_module.py`.
 - **Configurations**: Defined in `configs/model/xgboost_binding_site.yaml`.
 
 ### Key Hyperparameters
+
 - `learning_rate`: Step size shrinkage used in updates.
 - `max_depth`: Maximum depth of a tree.
 - `n_estimators`: Number of boosting rounds.
@@ -93,13 +101,14 @@ The XGBoost model is implemented in `src/models/xgboost_binding_site_module.py`.
 - `colsample_bytree`: Fraction of features used for training each tree.
 
 ### Training
+
 To train the XGBoost model, use the following command:
 
 ```bash
 python src/train.py experiment=xgboost_binding_site
 ```
 
----
+______________________________________________________________________
 
 ## Logging and Monitoring
 

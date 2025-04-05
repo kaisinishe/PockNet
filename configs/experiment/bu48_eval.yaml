@@ -17,8 +17,8 @@ tags: ["binding_site", "bu48", "tabnet", "evaluation"]
 
 # Change this to point to the specific bu48 evaluation dataset
 data:
-  data_dir: ${paths.data_dir}  # Base data directory
-  eval_dataset: "bu48"  # Specify to use bu48 for evaluation
+  data_dir: ${paths.data_dir} # Base data directory
+  eval_dataset: "bu48" # Specify to use bu48 for evaluation
 
 # Logger configuration for tracking evaluation results
 logger:

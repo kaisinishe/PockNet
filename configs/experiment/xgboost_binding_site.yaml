@@ -10,4 +10,4 @@ test: True
 seed: 42
 
 trainer:
-  max_epochs: 10  # XGBoost typically needs fewer epochs since it trains on full data each epoch
+  max_epochs: 10 # XGBoost typically needs fewer epochs since it trains on full data each epoch
