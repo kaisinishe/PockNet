@@ -1,0 +1,13 @@
+# @package _global_
+defaults:
+  - override /data: binding_site
+  - override /model: hopular_binding_site
+  - override /trainer: gpu
+task_name: "train_hopular"
+tags: ["binding_site", "chen11", "bu48", "hopular"]
+train: True
+test: True
+seed: 42
+
+trainer:
+  max_epochs: 10

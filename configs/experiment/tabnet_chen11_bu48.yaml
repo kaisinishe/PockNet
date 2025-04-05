@@ -1,0 +1,57 @@
+# @package _global_
+
+defaults:
+  - override /data: binding_site
+  - override /model: tabnet_binding_site
+  - override /callbacks: default
+  - override /trainer: gpu
+  - override /logger: wandb
+  - _self_
+
+task_name: "train_tabnet_chen11_bu48"
+
+# Model configuration
+model:
+  _target_: src.models.tabnet_binding_site_module.TabNetBindingSiteModule
+  optimizer:
+    _target_: torch.optim.Adam
+    _partial_: true
+    lr: 0.01
+    weight_decay: 0.0001
+  scheduler:
+    _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+    _partial_: true
+    mode: min
+    factor: 0.1
+    patience: 10
+  n_d: 128  # Width of the decision prediction layer
+  n_a: 128  # Width of the attention embedding for each mask
+  n_steps: 8  # Number of steps in the architecture
+  gamma: 1.5  # Relaxation parameter
+
+# Data configurations
+data:
+  batch_size: 1024
+  train_val_test_split: [0.8, 0.2, null]  # 80/20 train/val split, no test split
+  sampling_strategy: "combined"  # Using combined sampling strategy
+  eval_dataset: "bu48"  # Use BU48 as evaluation dataset
+
+# Trainer configurations
+trainer:
+  min_epochs: 5
+  max_epochs: 20
+  gradient_clip_val: 0.5
+
+# WandB logger configuration
+logger:
+  wandb:
+    tags: ${tags}
+    group: "binding_site_training"
+    name: "chen11_80_20_bu48_eval"
+
+tags: ["binding_site", "chen11", "bu48", "tabnet", "80_20_split"]
+
+train: True
+test: True
+
+seed: 42
