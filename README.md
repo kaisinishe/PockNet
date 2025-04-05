@@ -104,9 +104,3 @@ python src/train.py experiment=xgboost_binding_site
 ## Logging and Monitoring
 
 The project supports logging with WandB, TensorBoard, and other tools. Configure the logger in the `configs/logger/` directory.
-
----
-
-## Contributing
-
-Contributions are welcome! Please ensure all tests pass before submitting a pull request.
