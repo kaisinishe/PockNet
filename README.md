@@ -122,6 +122,22 @@ The results of the XGBoost and TabNet compared with the p2rank evaluated on the 
 | XGBoost | 0.042 | 0.361 | 0.23 |
 | p2rank  | NaN | 0.324 | 0.21 |______________________________________________________________________
 
+
+---
+
+## 🚧 Ongoing Work & Master Thesis
+
+This repository began as a practical project and is now evolving as part of my **ongoing Master’s thesis**. The next steps will involve:
+
+- **Incorporating EMS2 embeddings** to enhance input representations with structural and functional protein information.
+- **Exploring and comparing architectures** such as:
+  - **Transformer-based models**
+  - **TabNet-style extensions**
+  - **XLSTM** networks
+
+These advancements aim to push the accuracy and generalizability of binding site prediction using deep learning.
+
+---
 ## Logging and Monitoring
 
 The project supports logging with WandB, TensorBoard, and other tools. Configure the logger in the `configs/logger/` directory.
