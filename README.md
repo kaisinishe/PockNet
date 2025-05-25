@@ -44,7 +44,7 @@ Ensure you have the following installed:
 2. Create a conda environment and install dependencies:
 
    ```bash
-   conda env create -f environment.yaml -n pocknet
+   conda env create -f environment.yml -n pocknet
    conda activate pocknet
    ```
 
