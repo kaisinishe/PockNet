@@ -85,7 +85,7 @@ dependencies:
   - zlib
   - pip:
       - biopython==1.85
-      - hopular==1.0.0
+      - git+https://github.com/ml-jku/hopular.git@main#egg=hopular
       - hydra-colorlog==1.2.0
       - hydra-core==1.3.2
       - imbalanced-learn==0.13.0
